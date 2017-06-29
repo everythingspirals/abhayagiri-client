@@ -14,7 +14,7 @@ module.exports = {
     entry: ['./app/app.js'],
 
     output: {
-        path: path.join(__dirname, './build/'),
+        path: path.join(__dirname, './public/'),
         filename: 'js/client.js'
     },
     module: {
@@ -51,6 +51,12 @@ module.exports = {
     ],
 
     devtool: 'eval',
+
+    devServer: {
+        contentBase: path.join(__dirname, "public"),
+        compress: true,
+        port: 9000
+    },
 
     resolve: {
         extensions: ['.js', '.jsx'],
